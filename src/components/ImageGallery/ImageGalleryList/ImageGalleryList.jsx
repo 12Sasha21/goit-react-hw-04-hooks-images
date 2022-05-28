@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import ImageGalleryItem from '../ImageGalleryItem/ImageGalleryItem';
 
 const ImageGalleryList = ({ images, onModalOpen }) => (
@@ -8,10 +7,6 @@ const ImageGalleryList = ({ images, onModalOpen }) => (
     {images.map(image => (
       <ImageGalleryItem
         key={`image-item-image-${image.id}`}
-        // webformatURL={image.webformatURL}
-        // tags={image.tags}
-        // largeImageURL={image.largeImageURL}
-        // {...image}
         image={image}
         onModalOpen={onModalOpen}
       />
@@ -24,7 +19,7 @@ ImageGalleryList.propTypes = {
   images: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-    }),
+    })
   ).isRequired,
   onModalOpen: PropTypes.func.isRequired,
 };
