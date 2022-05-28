@@ -8,11 +8,9 @@ export default function Modal({
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
 
-    // очистить
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleKeyDown = e => {
