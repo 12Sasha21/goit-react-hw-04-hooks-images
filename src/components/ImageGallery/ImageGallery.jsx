@@ -29,9 +29,7 @@ export default function ImageGallery({ searchImageName }) {
       fetchImages(searchImgName, page)
         .then(({ hits, total }) => {
           if (!total) {
-            const newError = new Error(
-              `There is no picture with ${searchImgName} name, please enter another request`
-            );
+            const newError = new Error(`Запит ${searchImgName} не найдено`);
 
             setError(newError);
             setStatus(Status.REJECTED);
